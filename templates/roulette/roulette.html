@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Roulette</title>
+
+    <style>
+        body {
+            background-image: url('/static/images/roulette/roulette_back.jpg');
+            background-repeat: no-repeat;
+            background-size: cover; /* múltiplos exactos 10x */
+            background-position: center;
+            image-rendering: pixelated;
+            display: flex;
+            justify-content: center;
+            color: white;
+            font-family: Arial;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 20px;
+        }
+
+        .contenedor {
+            display: flex;
+            justify-content: flex-start; /* 👈 mueve a la izquierda */
+            gap: 80px;
+            margin-top: 40px;
+            margin-left: 40px;
+        }
+
+        .ruleta-box {
+            text-align: center;
+        }
+
+        .button_here_2 {
+            position: absolute;
+            bottom: 50%;
+            left: 20px;
+            width: 100px;
+            height: 100px;
+            cursor: pointer;
+        }
+
+        h2 {
+            bottom: 45%;
+            left: 40px;
+            position: absolute;
+        }
+
+        canvas {
+            background: white;
+            border-radius: 50%;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px 30px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>🎰 RULETA DE Q&A 🎰</h1>
+<img src="/static/images/general/here.png" class="button_here_2" onclick="ir()">
+    <script>
+        function ir() {
+            window.location.href = "/middle";
+        }
+    </script>
+<h2>Medio</h2>
+<div class="contenedor">
+
+    <!-- RULETA 1 -->
+    <div class="ruleta-box">
+        <canvas id="ruleta1" width="500" height="500"></canvas>
+        <br>
+        <button onclick="girar1()">GIRAR</button>
+    </div>
+
+    <!-- RULETA 2 -->
+    <div class="ruleta-box">
+        <canvas id="ruleta2" width="500" height="500"></canvas>
+        <br>
+        <button onclick="girar2()">GIRAR</button>
+    </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/zarocknz/javascript-winwheel/Winwheel.min.js"></script>
+
+<script>
+/* ========= RULETA 1 ========= */
+let ruleta1 = new Winwheel({
+    canvasId: 'ruleta1',
+    numSegments: 40,
+    outerRadius: 230,
+    drawMode: 'code',
+    segments: [
+    // ===== FÁCILES (1–15) | PESO 5 =====
+    { text: "¿Qué es el cambio climático?", weight: 5 },
+    { text: "¿Gas principal del calentamiento global?", weight: 5 },
+    { text: "Actividad que genera más CO₂?", weight: 5 },
+    { text: "¿Qué es el efecto invernadero?", weight: 5 },
+    { text: "¿Ejemplo de energía renovable?", weight: 5 },
+    { text: "¿Qué se derrite por el calentamiento?", weight: 5 },
+    { text: "Animal del Ártico en peligro?", weight: 5 },
+    { text: "¿Qué provoca el aumento del mar?", weight: 5 },
+    { text: "¿El cambio climático es humano?", weight: 5 },
+    { text: "¿Qué acción ayuda al planeta?", weight: 5 },
+    { text: "¿Qué significa reciclar?", weight: 5 },
+    { text: "¿Transporte que menos contamina?", weight: 5 },
+    { text: "¿Los árboles ayudan?", weight: 5 },
+    { text: "¿Gas que no contamina?", weight: 5 },
+    { text: "¿Las fábricas contaminan?", weight: 5 },
+
+    // ===== MEDIA (16–30) | PESO 3 =====
+    { text: "¿Qué es huella de carbono?", weight: 3 },
+    { text: "País que más contamina?", weight: 3 },
+    { text: "¿Qué es deforestación?", weight: 3 },
+    { text: "¿Energía del viento?", weight: 3 },
+    { text: "¿Qué calienta los océanos?", weight: 3 },
+    { text: "¿Qué son gases invernadero?", weight: 3 },
+    { text: "Gas que producen las vacas?", weight: 3 },
+    { text: "¿Por qué el metano es peligroso?", weight: 3 },
+    { text: "¿Ejemplo de desastre climático?", weight: 3 },
+    { text: "¿Qué busca el Acuerdo de París?", weight: 3 },
+    { text: "¿Qué pasa si sube 2°C?", weight: 3 },
+    { text: "Actividad que destruye bosques?", weight: 3 },
+    { text: "¿Qué es energía limpia?", weight: 3 },
+    { text: "¿Por qué sube el mar?", weight: 3 },
+    { text: "¿Qué es sustentabilidad?", weight: 3 },
+
+    // ===== DIFÍCIL (31–40) | PESO 1 =====
+    { text: "¿Qué es acidificación oceánica?", weight: 1 },
+    { text: "¿Cuánto del calentamiento es humano?", weight: 1 },
+    { text: "¿Qué es permafrost?", weight: 1 },
+    { text: "¿Qué pasa si se derrite?", weight: 1 },
+    { text: "¿Qué es albedo terrestre?", weight: 1 },
+    { text: "¿Qué es retroalimentación?", weight: 1 },
+    { text: "Corriente que regula Europa?", weight: 1 },
+    { text: "¿Qué es migración climática?", weight: 1 },
+    { text: "Sector más contaminante?", weight: 1 },
+    { text: "¿Qué es un tipping point?", weight: 1 }
+    ],
+
+    animation: {
+        type: 'spinToStop',
+        duration: 4,
+        spins: 8,
+        callbackFinished: resultado1
+    }
+});
+
+function girar1() {
+    ruleta1.startAnimation();
+}
+
+function resultado1(seg) {
+    alert("Ruleta 1: " + seg.text);
+}
+
+/* ========= RULETA 2 ========= */
+let ruleta2 = new Winwheel({
+    canvasId: 'ruleta2',
+    numSegments: 40,
+    outerRadius: 230,
+    drawMode: 'code',
+    segments: [
+    // ===== RESPUESTAS FÁCILES | PESO 5 =====
+    { text: "Aumento de temperatura global", weight: 5 },
+    { text: "Dióxido de carbono", weight: 5 },
+    { text: "Quema de combustibles", weight: 5 },
+    { text: "Atrapa calor", weight: 5 },
+    { text: "Energía solar", weight: 5 },
+    { text: "Glaciares", weight: 5 },
+    { text: "Oso polar", weight: 5 },
+    { text: "Derretimiento de hielos", weight: 5 },
+    { text: "Ambas, pero más humano", weight: 5 },
+    { text: "Reciclar", weight: 5 },
+    { text: "Reutilizar residuos", weight: 5 },
+    { text: "Bicicleta", weight: 5 },
+    { text: "Sí", weight: 5 },
+    { text: "Oxígeno", weight: 5 },
+    { text: "Sí", weight: 5 },
+
+    // ===== RESPUESTAS MEDIAS | PESO 3 =====
+    { text: "Cantidad de CO₂ personal", weight: 3 },
+    { text: "China", weight: 3 },
+    { text: "Tala masiva", weight: 3 },
+    { text: "Eólica", weight: 3 },
+    { text: "Calentamiento global", weight: 3 },
+    { text: "Gases que atrapan calor", weight: 3 },
+    { text: "Metano", weight: 3 },
+    { text: "Calienta más que CO₂", weight: 3 },
+    { text: "Sequías e incendios", weight: 3 },
+    { text: "Reducir calentamiento", weight: 3 },
+    { text: "Daños graves", weight: 3 },
+    { text: "Ganadería", weight: 3 },
+    { text: "Energía sin contaminar", weight: 3 },
+    { text: "Deshielo y expansión", weight: 3 },
+    { text: "Uso responsable de recursos", weight: 3 },
+
+    // ===== RESPUESTAS DIFÍCILES | PESO 1 =====
+    { text: "Exceso de CO₂ en el mar", weight: 1 },
+    { text: "Más del 97%", weight: 1 },
+    { text: "Suelo congelado", weight: 1 },
+    { text: "Libera metano", weight: 1 },
+    { text: "Reflejar luz solar", weight: 1 },
+    { text: "Refuerza efectos", weight: 1 },
+    { text: "Corriente del Golfo", weight: 1 },
+    { text: "Desplazamiento humano", weight: 1 },
+    { text: "Energía y transporte", weight: 1 },
+    { text: "Punto sin retorno", weight: 1 }
+    ],
+
+    animation: {
+        type: 'spinToStop',
+        duration: 3,
+        spins: 6,
+        callbackFinished: resultado2
+    }
+});
+
+function girar2() {
+    ruleta2.startAnimation();
+}
+
+function resultado2(seg) {
+    alert("Ruleta 2: " + seg.text);
+}
+</script>
+
+</body>
+</html>
