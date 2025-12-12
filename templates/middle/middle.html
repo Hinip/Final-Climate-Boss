@@ -5,12 +5,18 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/middle.css') }}">
 </head>
 <body>
-    <img src="/static/images/general/here.png" class="button_here_1" onclick="ir()">
+    <img src="/static/images/general/here.png" class="button_here_1" onclick="ir_s()">
+    <a class="r_text">Ruletas</a>
+    <img src="/static/images/general/here.png" class="button_here_2" onclick="ir_r()">
+    <a class="r_text_2">Juntar</a>
     <script>
-        function ir() {
+        function ir_r() {
+            window.location.href = "/sum";
+        }
+
+        function ir_s() {
             window.location.href = "/roulette";
         }
     </script>
-    <a class="r_text">Ruletas</a>
 </body>
 </html>

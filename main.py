@@ -14,6 +14,10 @@ def middle():
 def roulette():
     return render_template("roulette/roulette.html")
 
+@app.route("/sum")
+def sum():
+    return render_template("sum/sum.html")
+
 if __name__ == "__main__":
     app.run(debug=True)
 

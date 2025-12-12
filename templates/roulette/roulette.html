@@ -99,7 +99,7 @@ let ruleta1 = new Winwheel({
     canvasId: 'ruleta1',
     numSegments: 40,
     outerRadius: 230,
-    drawMode: 'code',
+    drawMode: 'draw',
     segments: [
     // ===== FÁCILES (1–15) | PESO 5 =====
     { text: "¿Qué es el cambio climático?", weight: 5 },
@@ -152,7 +152,9 @@ let ruleta1 = new Winwheel({
         type: 'spinToStop',
         duration: 4,
         spins: 8,
-        callbackFinished: resultado1
+        callbackFinished: mostrarPregunta
+
+
     }
 });
 
@@ -160,8 +162,13 @@ function girar1() {
     ruleta1.startAnimation();
 }
 
-function resultado1(seg) {
-    alert("Ruleta 1: " + seg.text);
+function mostrarPregunta(segmento) {
+    alert("Ruleta 1: " + segmento.text);
+
+    // Guardar en localStorage
+    let lista = JSON.parse(localStorage.getItem("preguntas")) || [];
+    lista.push(segmento.text);
+    localStorage.setItem("preguntas", JSON.stringify(lista));
 }
 
 /* ========= RULETA 2 ========= */
@@ -169,7 +176,7 @@ let ruleta2 = new Winwheel({
     canvasId: 'ruleta2',
     numSegments: 40,
     outerRadius: 230,
-    drawMode: 'code',
+    drawMode: 'draw',
     segments: [
     // ===== RESPUESTAS FÁCILES | PESO 5 =====
     { text: "Aumento de temperatura global", weight: 5 },
@@ -222,7 +229,7 @@ let ruleta2 = new Winwheel({
         type: 'spinToStop',
         duration: 3,
         spins: 6,
-        callbackFinished: resultado2
+        callbackFinished: mostrarRespuesta  
     }
 });
 
@@ -230,9 +237,15 @@ function girar2() {
     ruleta2.startAnimation();
 }
 
-function resultado2(seg) {
-    alert("Ruleta 2: " + seg.text);
+function mostrarRespuesta(segmento) {
+    alert("Ruleta 2: " + segmento.text);
+
+    // Guardar en localStorage
+    let lista = JSON.parse(localStorage.getItem("respuestas")) || [];
+    lista.push(segmento.text);
+    localStorage.setItem("respuestas", JSON.stringify(lista));
 }
+
 </script>
 
 </body>

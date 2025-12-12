@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("/static/images/sum/b-sum.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: all;
+    image-rendering: pixelated;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button_here_3 {
+    position: absolute;
+    top: 50%;
+    left: 90%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    width: 100px;
+    height: 100px;
+}
+
+.button_here_3:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.r_text_3 {
+    position: absolute;
+    top: 65%;
+    left: 90%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.combo1 {
+    position: absolute;
+    left: 200px;   /* X */
+    top: 300px;    /* Y */
+    width: 280px;
+    height: 60px;
+    font-size: 28px;
+    border-radius: 10px;
+}
+
+.combo2 {
+    position: absolute;
+    right: 200px;   /* X */
+    top: 300px;    /* Y */
+    width: 280px;
+    height: 60px;
+    font-size: 28px;
+    border-radius: 10px;
+}
+
+.b_sum {
+    top: 300px;
+    position: absolute;
+    width: 150px;
+    height: 70px;
+}

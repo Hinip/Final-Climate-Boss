@@ -34,10 +34,35 @@ body {
     transform: translate(-50%, -50%) scale(1.1);
 }
 
+.button_here_2 {
+    position: absolute;
+    top: 50%;
+    right: 71%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    width: 100px;
+    height: 100px;
+}
+
+.button_here_2:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
 .r_text {
     position: absolute;
     top: 65%;
     left: 75%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.r_text_2 {
+    position: absolute;
+    top: 65%;
+    right: 75%;
     transform: translate(-50%, -50%);
     font-size: 24px;
     color: white;

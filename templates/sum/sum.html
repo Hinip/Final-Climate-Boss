@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>sum</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/sum.css') }}">
+    </head>
+    <body>
+        <img src="/static/images/general/here.png" class="button_here_3" onclick="ir()">
+        <script>
+            function ir() {
+                window.location.href = "/middle";
+            }
+        </script>
+        <a class="r_text_3">Medio</a>
+    
+        <h1>Juntar</h1>
+
+        <select id="combo1" class = "combo1"></select>
+        <select id="combo2" class = "combo2"></select>
+
+        <button onclick="sumar()" class = b_sum>Sumar</button>
+
+        <p id="resultado"></p>
+
+    </body>
+</html>
