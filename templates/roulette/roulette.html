@@ -102,50 +102,50 @@ let ruleta1 = new Winwheel({
     drawMode: 'draw',
     segments: [
     // ===== FÁCILES (1–15) | PESO 5 =====
-    { text: "¿Qué es el cambio climático?", weight: 5 },
-    { text: "¿Gas principal del calentamiento global?", weight: 5 },
-    { text: "Actividad que genera más CO₂?", weight: 5 },
-    { text: "¿Qué es el efecto invernadero?", weight: 5 },
-    { text: "¿Ejemplo de energía renovable?", weight: 5 },
-    { text: "¿Qué se derrite por el calentamiento?", weight: 5 },
-    { text: "Animal del Ártico en peligro?", weight: 5 },
-    { text: "¿Qué provoca el aumento del mar?", weight: 5 },
-    { text: "¿El cambio climático es humano?", weight: 5 },
-    { text: "¿Qué acción ayuda al planeta?", weight: 5 },
-    { text: "¿Qué significa reciclar?", weight: 5 },
-    { text: "¿Transporte que menos contamina?", weight: 5 },
-    { text: "¿Los árboles ayudan?", weight: 5 },
-    { text: "¿Gas que no contamina?", weight: 5 },
-    { text: "¿Las fábricas contaminan?", weight: 5 },
+    { id: 1, text: "¿Qué es el cambio climático?", weight: 5 },
+    { id: 2, text: "¿Cuál es el gas principal del calentamiento global?", weight: 5 },
+    { id: 3, text: "¿Qué actividad humana genera más CO₂?", weight: 5 },
+    { id: 4, text: "¿Qué es el efecto invernadero?", weight: 5 },
+    { id: 5, text: "Nombra una energía renovable", weight: 5 },
+    { id: 6, text: "¿Qué se está derritiendo por el calentamiento global?", weight: 5 },
+    { id: 7, text: "¿Qué animal del Ártico está en peligro por el clima?", weight: 5 },
+    { id: 8, text: "¿Qué provoca que suba el nivel del mar?", weight: 5 },
+    { id: 9, text: "¿El cambio climático es causado por humanos?", weight: 5 },
+    { id: 10, text: "¿Qué acción diaria ayuda más al planeta?", weight: 5 },
+    { id: 11, text: "¿Qué significa reciclar?", weight: 5 },
+    { id: 12, text: "¿Qué transporte contamina menos?", weight: 5 },
+    { id: 13, text: "¿Por qué los árboles ayudan al clima?", weight: 5 },
+    { id: 14, text: "Dime un gas que no contamina", weight: 5 },
+    { id: 15, text: "¿Las fábricas causan contaminación?", weight: 5 },
 
     // ===== MEDIA (16–30) | PESO 3 =====
-    { text: "¿Qué es huella de carbono?", weight: 3 },
-    { text: "País que más contamina?", weight: 3 },
-    { text: "¿Qué es deforestación?", weight: 3 },
-    { text: "¿Energía del viento?", weight: 3 },
-    { text: "¿Qué calienta los océanos?", weight: 3 },
-    { text: "¿Qué son gases invernadero?", weight: 3 },
-    { text: "Gas que producen las vacas?", weight: 3 },
-    { text: "¿Por qué el metano es peligroso?", weight: 3 },
-    { text: "¿Ejemplo de desastre climático?", weight: 3 },
-    { text: "¿Qué busca el Acuerdo de París?", weight: 3 },
-    { text: "¿Qué pasa si sube 2°C?", weight: 3 },
-    { text: "Actividad que destruye bosques?", weight: 3 },
-    { text: "¿Qué es energía limpia?", weight: 3 },
-    { text: "¿Por qué sube el mar?", weight: 3 },
-    { text: "¿Qué es sustentabilidad?", weight: 3 },
+    { id: 16, text: "¿Qué es la huella de carbono?", weight: 3 },
+    { id: 17, text: "¿Qué país contamina más actualmente?", weight: 3 },
+    { id: 18, text: "¿Qué es la deforestación?", weight: 3 },
+    { id: 19, text: "¿Qué es la energía eólica?", weight: 3 },
+    { id: 20, text: "¿Qué está calentando los océanos?", weight: 3 },
+    { id: 21, text: "Define 'gases de efecto invernadero'", weight: 3 },
+    { id: 22, text: "¿Qué gas producen las vacas?", weight: 3 },
+    { id: 23, text: "¿Por qué el metano es tan peligroso?", weight: 3 },
+    { id: 24, text: "Nombra un desastre climático", weight: 3 },
+    { id: 25, text: "¿Qué quiere lograr el Acuerdo de París?", weight: 3 },
+    { id: 26, text: "¿Qué pasa si la Tierra sube 2°C?", weight: 3 },
+    { id: 27, text: "¿Qué actividad destruye más bosques?", weight: 3 },
+    { id: 28, text: "¿Qué significa energía limpia?", weight: 3 },
+    { id: 29, text: "¿Por qué sube el nivel del mar?", weight: 3 },
+    { id: 30, text: "¿Qué es la sustentabilidad?", weight: 3 },
 
     // ===== DIFÍCIL (31–40) | PESO 1 =====
-    { text: "¿Qué es acidificación oceánica?", weight: 1 },
-    { text: "¿Cuánto del calentamiento es humano?", weight: 1 },
-    { text: "¿Qué es permafrost?", weight: 1 },
-    { text: "¿Qué pasa si se derrite?", weight: 1 },
-    { text: "¿Qué es albedo terrestre?", weight: 1 },
-    { text: "¿Qué es retroalimentación?", weight: 1 },
-    { text: "Corriente que regula Europa?", weight: 1 },
-    { text: "¿Qué es migración climática?", weight: 1 },
-    { text: "Sector más contaminante?", weight: 1 },
-    { text: "¿Qué es un tipping point?", weight: 1 }
+    { id: 31, text: "¿Qué es la acidificación de los océanos?", weight: 1 },
+    { id: 32, text: "¿Cuánto del calentamiento global es causado por humanos?", weight: 1 },
+    { id: 33, text: "¿Qué es el permafrost?", weight: 1 },
+    { id: 34, text: "¿Qué pasa si el permafrost se derrite?", weight: 1 },
+    { id: 35, text: "¿Qué es el albedo terrestre?", weight: 1 },
+    { id: 36, text: "¿Qué significa retroalimentación climática?", weight: 1 },
+    { id: 37, text: "¿Qué corriente regula la temperatura en Europa?", weight: 1 },
+    { id: 38, text: "¿Qué es la migración climática?", weight: 1 },
+    { id: 39, text: "¿Cuál es el sector más contaminante del mundo?", weight: 1 },
+    { id: 40, text: "¿Qué es un punto de no retorno (tipping point)?", weight: 1 }
     ],
 
     animation: {
@@ -162,13 +162,17 @@ function girar1() {
     ruleta1.startAnimation();
 }
 
-function mostrarPregunta(segmento) {
-    alert("Ruleta 1: " + segmento.text);
+function mostrarPregunta(indicatedSegment) {
+    alert("Ruleta 1: " + indicatedSegment.text);
 
-    // Guardar en localStorage
     let lista = JSON.parse(localStorage.getItem("preguntas")) || [];
-    lista.push(segmento.text);
+    lista.push({
+        id: indicatedSegment.id,
+        text: indicatedSegment.text
+    });
     localStorage.setItem("preguntas", JSON.stringify(lista));
+
+    eliminarSegmento(ruleta1, indicatedSegment);
 }
 
 /* ========= RULETA 2 ========= */
@@ -178,52 +182,53 @@ let ruleta2 = new Winwheel({
     outerRadius: 230,
     drawMode: 'draw',
     segments: [
-    // ===== RESPUESTAS FÁCILES | PESO 5 =====
-    { text: "Aumento de temperatura global", weight: 5 },
-    { text: "Dióxido de carbono", weight: 5 },
-    { text: "Quema de combustibles", weight: 5 },
-    { text: "Atrapa calor", weight: 5 },
-    { text: "Energía solar", weight: 5 },
-    { text: "Glaciares", weight: 5 },
-    { text: "Oso polar", weight: 5 },
-    { text: "Derretimiento de hielos", weight: 5 },
-    { text: "Ambas, pero más humano", weight: 5 },
-    { text: "Reciclar", weight: 5 },
-    { text: "Reutilizar residuos", weight: 5 },
-    { text: "Bicicleta", weight: 5 },
-    { text: "Sí", weight: 5 },
-    { text: "Oxígeno", weight: 5 },
-    { text: "Sí", weight: 5 },
+    // ===== FÁCILES (1–15) | PESO 5 =====
+    { id: 1, text: "Cambio en la temperatura global a largo plazo", weight: 5 },
+    { id: 2, text: "Dióxido de carbono (CO₂)", weight: 5 },
+    { id: 3, text: "La quema de combustibles fósiles", weight: 5 },
+    { id: 4, text: "Un proceso que atrapa calor en la atmósfera", weight: 5 },
+    { id: 5, text: "Solar, eólica o hidráulica", weight: 5 },
+    { id: 6, text: "Los glaciares y el hielo polar", weight: 5 },
+    { id: 7, text: "El oso polar", weight: 5 },
+    { id: 8, text: "El derretimiento de hielo y la expansión del agua", weight: 5 },
+    { id: 9, text: "Sí, principalmente por actividad humana", weight: 5 },
+    { id: 10, text: "Reducir, reciclar y ahorrar energía", weight: 5 },
+    { id: 11, text: "Convertir residuos en nuevos materiales", weight: 5 },
+    { id: 12, text: "La bicicleta o caminar", weight: 5 },
+    { id: 13, text: "Absorben CO₂ y producen oxígeno", weight: 5 },
+    { id: 14, text: "Oxígeno (O₂)", weight: 5 },
+    { id: 15, text: "Sí, producen gases contaminantes", weight: 5 },
 
-    // ===== RESPUESTAS MEDIAS | PESO 3 =====
-    { text: "Cantidad de CO₂ personal", weight: 3 },
-    { text: "China", weight: 3 },
-    { text: "Tala masiva", weight: 3 },
-    { text: "Eólica", weight: 3 },
-    { text: "Calentamiento global", weight: 3 },
-    { text: "Gases que atrapan calor", weight: 3 },
-    { text: "Metano", weight: 3 },
-    { text: "Calienta más que CO₂", weight: 3 },
-    { text: "Sequías e incendios", weight: 3 },
-    { text: "Reducir calentamiento", weight: 3 },
-    { text: "Daños graves", weight: 3 },
-    { text: "Ganadería", weight: 3 },
-    { text: "Energía sin contaminar", weight: 3 },
-    { text: "Deshielo y expansión", weight: 3 },
-    { text: "Uso responsable de recursos", weight: 3 },
+    // ===== MEDIA (16–30) | PESO 3 =====
+    { id: 16, text: "La cantidad de CO₂ que generas", weight: 3 },
+    { id: 17, text: "China", weight: 3 },
+    { id: 18, text: "La tala masiva de árboles", weight: 3 },
+    { id: 19, text: "Energía producida por el viento", weight: 3 },
+    { id: 20, text: "El calentamiento global", weight: 3 },
+    { id: 21, text: "Gases que atrapan calor", weight: 3 },
+    { id: 22, text: "Metano (CH₄)", weight: 3 },
+    { id: 23, text: "Atrapa mucho más calor que el CO₂", weight: 3 },
+    { id: 24, text: "Incendios, huracanes, sequías", weight: 3 },
+    { id: 25, text: "Reducir el calentamiento global", weight: 3 },
+    { id: 26, text: "Genera daños irreversibles", weight: 3 },
+    { id: 27, text: "La agricultura y ganadería intensiva", weight: 3 },
+    { id: 28, text: "Energía que no contamina", weight: 3 },
+    { id: 29, text: "Derretimiento y expansión térmica", weight: 3 },
+    { id: 30, text: "Usar recursos sin agotarlos", weight: 3 },
 
-    // ===== RESPUESTAS DIFÍCILES | PESO 1 =====
-    { text: "Exceso de CO₂ en el mar", weight: 1 },
-    { text: "Más del 97%", weight: 1 },
-    { text: "Suelo congelado", weight: 1 },
-    { text: "Libera metano", weight: 1 },
-    { text: "Reflejar luz solar", weight: 1 },
-    { text: "Refuerza efectos", weight: 1 },
-    { text: "Corriente del Golfo", weight: 1 },
-    { text: "Desplazamiento humano", weight: 1 },
-    { text: "Energía y transporte", weight: 1 },
-    { text: "Punto sin retorno", weight: 1 }
+    // ===== DIFÍCIL (31–40) | PESO 1 =====
+    { id: 31, text: "Exceso de CO₂ disuelto en el mar", weight: 1 },
+    { id: 32, text: "Más del 97% es por humanos", weight: 1 },
+    { id: 33, text: "Suelo congelado permanentemente", weight: 1 },
+    { id: 34, text: "Libera enormes cantidades de metano", weight: 1 },
+    { id: 35, text: "La capacidad de reflejar luz solar", weight: 1 },
+    { id: 36, text: "Un efecto que se refuerza a sí mismo", weight: 1 },
+    { id: 37, text: "La corriente del Golfo", weight: 1 },
+    { id: 38, text: "Migración causada por el clima", weight: 1 },
+    { id: 39, text: "El sector energético y transporte", weight: 1 },
+    { id: 40, text: "Un cambio irreversible del sistema climático", weight: 1 }
     ],
+
 
     animation: {
         type: 'spinToStop',
@@ -237,15 +242,24 @@ function girar2() {
     ruleta2.startAnimation();
 }
 
-function mostrarRespuesta(segmento) {
-    alert("Ruleta 2: " + segmento.text);
+function mostrarRespuesta(indicatedSegment) {
+    alert("Ruleta 2: " + indicatedSegment.text);
 
-    // Guardar en localStorage
     let lista = JSON.parse(localStorage.getItem("respuestas")) || [];
-    lista.push(segmento.text);
+    lista.push({
+        id: indicatedSegment.id,
+        text: indicatedSegment.text
+    });
     localStorage.setItem("respuestas", JSON.stringify(lista));
+
+    eliminarSegmento(ruleta2, indicatedSegment);
 }
 
+</script>
+<script>
+if (localStorage.getItem("vidas") === null) {
+    localStorage.setItem("vidas", 3);
+}
 </script>
 
 </body>

@@ -21,6 +21,77 @@
         <button onclick="sumar()" class = b_sum>Sumar</button>
 
         <p id="resultado"></p>
+        <script>
+        window.onload = function () {
+
+            let preguntas = JSON.parse(localStorage.getItem("preguntas")) || [];
+            let respuestas = JSON.parse(localStorage.getItem("respuestas")) || [];
+
+            let combo1 = document.getElementById("combo1");
+            let combo2 = document.getElementById("combo2");
+
+            preguntas.forEach(p => {
+                let op = document.createElement("option");
+                op.textContent = p.text;
+                op.value = p.id; // 👈 ID oculto
+                combo1.appendChild(op);
+            });
+
+            respuestas.forEach(r => {
+                let op = document.createElement("option");
+                op.textContent = r.text;
+                op.value = r.id; // 👈 ID oculto
+                combo2.appendChild(op);
+            });
+        };
+        </script>
+
+        <script>
+            function sumar() {
+                let p = document.getElementById("combo1").value;
+                let r = document.getElementById("combo2").value;
+
+                if (p === r && vidas > 0) {
+                    document.getElementById("resultado").textContent = "✅ Correcto";
+                } else if (p !== r && vidas > 0) {
+                    document.getElementById("resultado").textContent = "❌ Incorrecto";
+                    perderVida();
+                } else {
+                    document.getElementById("resultado").textContent = "Ingrese una selección válida";
+                }
+            }
+        </script>
+
+        <script>
+            if (localStorage.getItem("vidas") === null) {
+                localStorage.setItem("vidas", 3);
+            }
+        </script>
+        <p id="vidas"></p>
+        <script>
+            function actualizarVidas() {
+                document.getElementById("vidas").textContent =
+                    "❤️ Vidas: " + localStorage.getItem("vidas");
+            }
+
+            actualizarVidas();
+    </script>
+    <script>
+        function perderVida() {
+            let vidas = parseInt(localStorage.getItem("vidas"));
+            vidas--;
+
+            localStorage.setItem("vidas", vidas);
+            actualizarVidas();
+
+            if (vidas <= 0) {
+                alert("💀 GAME OVER");
+                localStorage.clear();
+                localStorage.setItem("vidas", 3); // reinicio
+                window.location.href = "/";
+            }
+        }
+    </script>
 
     </body>
 </html>

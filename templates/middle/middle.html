@@ -18,5 +18,24 @@
             window.location.href = "/roulette";
         }
     </script>
+    <button class="b_reset" onclick="localStorage.clear()">Resetear Todo</button>
+    <script>
+    if (localStorage.getItem("vidas") === null) {
+        localStorage.setItem("vidas", 3);
+    }
+    </script>
+    <script>
+        let vidas = parseInt(localStorage.getItem("vidas"));
+    </script>
+    <p id="vidas"></p>
+    <script>
+        function actualizarVidas() {
+            document.getElementById("vidas").textContent =
+                "❤️ Vidas: " + localStorage.getItem("vidas");
+        }
+
+        actualizarVidas();
+    </script>
+
 </body>
 </html>
